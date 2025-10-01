@@ -1,11 +1,53 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useEffect } from 'react';
+import GallerySidebar from '@/components/GallerySidebar';
+import ProjectSection from '@/components/ProjectSection';
+
+const projects = [
+  { id: 'project-1', title: 'Project One', description: 'A brief description of your first project' },
+  { id: 'project-2', title: 'Project Two', description: 'A brief description of your second project' },
+  { id: 'project-3', title: 'Project Three', description: 'A brief description of your third project' },
+  { id: 'project-4', title: 'Project Four', description: 'A brief description of your fourth project' },
+];
 
 const Index = () => {
+  const [activeProject, setActiveProject] = useState('project-1');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      
+      for (const project of projects) {
+        const element = document.getElementById(project.id);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveProject(project.id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen">
+      <GallerySidebar projects={projects} activeProject={activeProject} />
+      
+      {/* Main content - centered as if sidebar doesn't exist */}
+      <div className="ml-64 flex justify-center">
+        <main className="w-full px-8">
+          {projects.map((project) => (
+            <ProjectSection
+              key={project.id}
+              id={project.id}
+              title={project.title}
+              description={project.description}
+            />
+          ))}
+        </main>
       </div>
     </div>
   );
