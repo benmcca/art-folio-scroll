@@ -38,10 +38,10 @@ const ProjectSection = ({ id, title, description, carousel, images }: ProjectSec
           </div>
         ) : carousel ? (
           <div className="space-y-6">
-            <div className="flex items-center gap-4">
-              <CarouselPrevious className="static translate-y-0" aria-label="Previous image" />
-              
-              <Carousel className="w-full" opts={{ loop: true }} setApi={setApi}>
+            <Carousel className="w-full" opts={{ loop: true }} setApi={setApi}>
+              <div className="flex items-center gap-4">
+                <CarouselPrevious className="static translate-y-0" aria-label="Previous image" />
+                
                 <CarouselContent>
                   {images.map((image, index) => (
                     <CarouselItem key={index}>
@@ -55,10 +55,10 @@ const ProjectSection = ({ id, title, description, carousel, images }: ProjectSec
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-              </Carousel>
-              
-              <CarouselNext className="static translate-y-0" aria-label="Next image" />
-            </div>
+                
+                <CarouselNext className="static translate-y-0" aria-label="Next image" />
+              </div>
+            </Carousel>
             
             {/* Dots indicator */}
             <div className="flex justify-center gap-2">
