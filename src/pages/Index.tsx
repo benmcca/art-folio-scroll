@@ -60,9 +60,9 @@ const Index = () => {
     <div className="min-h-screen">
       <GallerySidebar projects={projects} activeProject={activeProject} />
       
-      {/* Main content - centered as if sidebar doesn't exist */}
-      <div className="ml-64 flex justify-center">
-        <main className="w-full px-8">
+      {/* Main content - centered across full screen, ignoring sidebar */}
+      <main className="flex justify-center px-8">
+        <div className="w-full max-w-6xl">
           {projects.map((project) => (
             <ProjectSection
               key={project.id}
@@ -73,8 +73,8 @@ const Index = () => {
               images={project.images}
             />
           ))}
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
   );
 };
