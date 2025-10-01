@@ -8,28 +8,44 @@ const projects = [
     title: "Project One",
     description: "A brief description of your first project",
     carousel: true,
-    images: [],
+    images: [
+      "https://images.pexels.com/photos/1266808/pexels-photo-1266808.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    ],
   },
   {
     id: "project-2",
     title: "Project Two",
     description: "A brief description of your second project",
     carousel: false,
-    images: [],
+    images: [
+      "https://images.pexels.com/photos/1624438/pexels-photo-1624438.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/1525041/pexels-photo-1525041.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    ],
   },
   {
     id: "project-3",
     title: "Project Three",
     description: "A brief description of your third project",
     carousel: true,
-    images: [],
+    images: [
+      "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/3747132/pexels-photo-3747132.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/2740956/pexels-photo-2740956.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/2111015/pexels-photo-2111015.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    ],
   },
   {
     id: "project-4",
     title: "Project Four",
     description: "A brief description of your fourth project",
     carousel: false,
-    images: [],
+    images: [
+      "https://images.pexels.com/photos/1266808/pexels-photo-1266808.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/1192671/pexels-photo-1192671.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/1266808/pexels-photo-1266808.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    ],
   },
 ];
 
