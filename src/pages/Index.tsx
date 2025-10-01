@@ -3,10 +3,34 @@ import GallerySidebar from '@/components/GallerySidebar';
 import ProjectSection from '@/components/ProjectSection';
 
 const projects = [
-  { id: 'project-1', title: 'Project One', description: 'A brief description of your first project' },
-  { id: 'project-2', title: 'Project Two', description: 'A brief description of your second project' },
-  { id: 'project-3', title: 'Project Three', description: 'A brief description of your third project' },
-  { id: 'project-4', title: 'Project Four', description: 'A brief description of your fourth project' },
+  { 
+    id: 'project-1', 
+    title: 'Project One', 
+    description: 'A brief description of your first project',
+    carousel: true,
+    images: []
+  },
+  { 
+    id: 'project-2', 
+    title: 'Project Two', 
+    description: 'A brief description of your second project',
+    carousel: false,
+    images: []
+  },
+  { 
+    id: 'project-3', 
+    title: 'Project Three', 
+    description: 'A brief description of your third project',
+    carousel: true,
+    images: []
+  },
+  { 
+    id: 'project-4', 
+    title: 'Project Four', 
+    description: 'A brief description of your fourth project',
+    carousel: false,
+    images: []
+  },
 ];
 
 const Index = () => {
@@ -45,6 +69,8 @@ const Index = () => {
               id={project.id}
               title={project.title}
               description={project.description}
+              carousel={project.carousel}
+              images={project.images}
             />
           ))}
         </main>
