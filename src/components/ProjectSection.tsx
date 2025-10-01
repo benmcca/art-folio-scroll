@@ -23,7 +23,7 @@ const ProjectSection = ({ id, title, description, carousel, images }: ProjectSec
             <span className="text-muted-foreground text-sm">Add your artwork here</span>
           </div>
         ) : carousel ? (
-          <Carousel className="w-full">
+          <Carousel className="w-full" opts={{ loop: true }}>
             <CarouselContent>
               {images.map((image, index) => (
                 <CarouselItem key={index}>
@@ -37,8 +37,8 @@ const ProjectSection = ({ id, title, description, carousel, images }: ProjectSec
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-4" />
-            <CarouselNext className="right-4" />
+            <CarouselPrevious className="left-4" aria-label="Previous image" />
+            <CarouselNext className="right-4" aria-label="Next image" />
           </Carousel>
         ) : (
           <div className="space-y-8">
